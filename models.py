@@ -7,6 +7,20 @@ class Announcement(Base):
     
     id = Column(Integer,primary_key=True,index=True)
     company_name = Column(String,nullable=False)
-    description = Column(String,nullable=False)
+    company_id = Column(Integer,nullable=False)
+    announcement = Column(String,nullable=False)
+    announcement_type = Column(String)
+    announcement_link = Column(String,nullable=False)
+    time = Column(DateTime,nullable=False)
+
+class Cache(Base):
+    __tablename__ = "Cache"
+    
+    id = Column(Integer,primary_key=True,index=True)
+    unique_id = Column(String,nullable=False)
+    company_name = Column(String,nullable=False)
+    company_id = Column(Integer,nullable=False)
+    announcement = Column(String,nullable=False)
+    announcement_type = Column(String)
     announcement_link = Column(String,nullable=False)
     time = Column(DateTime,nullable=False)

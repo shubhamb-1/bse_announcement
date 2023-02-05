@@ -7,7 +7,7 @@ response = requests.get(url)
 html_content = response.content
 soup = BeautifulSoup(html_content, 'html.parser')
 # print(soup)
-# name = soup.find_all('div',{'class':"_1AtVbE col-12-12"})
+#name = soup.find_all('table',{'id':"lblann"})
 # mobile_name = soup.find_all("div",{"class":"_4rR01T"})
 # description = soup.find_all('td', {'class': 'TTRow_right'})
 # time = soup.find_all('td', {'class': 'TTRow_right'})
@@ -16,5 +16,6 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # for mobile in mobile_name:
 #     print(mobile.text)
 
-detail = soup.find_all('a',{"class":"ng-binding"})
+detail = soup.find_all('a',{"data-bs-target":"#mySingleNewsModal"})
 print(detail)
+# print(name)

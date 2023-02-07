@@ -5,6 +5,7 @@ from database import create_table
 
 app = FastAPI()
 
+
 @app.get("/")
 def home():
     # create_table()

@@ -10,7 +10,9 @@ engine = create_engine(
     # connect_agrs is only for SQlite
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-session = SessionLocal()
+
+def get_db_session():
+    return SessionLocal()
 
 
 # Session = sessionmaker()

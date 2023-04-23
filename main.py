@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from scrap import fetch_periodically
 from scheduler import scheduler_function
-from database import get_db_session
+from database import get_db_session,create_table
 import models
 import json
 
@@ -43,6 +43,6 @@ def read_announcements(skip: int = 0, limit: int = 100):
 
 @app.get("/")
 def home():
-    # create_table()
+    create_table()
     scheduler_function()
     return {"message":"success"}

@@ -7,6 +7,7 @@ def add_to_db(insert_list:list):
 
     #unique_id,company_name,company_id,announcement,announcement_type,announcement_link,time
     session = get_db_session()
+    print(insert_list)
     try:
         for data in insert_list:
             is_present = session.query(models.Announcement).filter_by(unique_id=data['unique_id']).first()
